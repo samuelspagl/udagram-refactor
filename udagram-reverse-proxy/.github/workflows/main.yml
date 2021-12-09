@@ -1,0 +1,27 @@
+name: Docker Image CI + Push
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    #branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile -t udagram-reverseproxy
+    - name: Login to DockerHub
+      uses: docker/login-action@v1
+      with:
+        username: ${{secrets.DOCKER_HUB_USERNAME}}
+        password: ${{secrets.DOCKER_HUB_ACCESS_TOKEN}}
+    - name: Tag the image
+      run: docker tag udagram-reverseproxy samuelspagl/udagram-reverseproxy
+    - name: Push Docker image
+      run: docker push samuelspagl/udagram-reverseproxy
