@@ -47,6 +47,6 @@ Additionally TravisCI is requiring a CreditCard as they have a "Freemium" Model.
 ![Kubernetes services](./screenshots/kubectl_get_services.png)
 
 ### Finished work:
-![Udagram](./Udagram_deployment_frontend.png)
+![Udagram](./screenshots/Udagram_deployment_frontend.png)
 
 More screenshots can be found in the screenshots folder.
