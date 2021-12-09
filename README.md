@@ -11,7 +11,8 @@ This is achieved by splitting the monolith into 4 parts:
 
 Everything is deployed via EKS in AWS.
 
-The subprojects are included in this repositor as submodules. 
+The subprojects are included in this repositor as submodules. For getting everything to work as excpected locally a `.env` file is required in each of the repository. In this file it is possible to store your environment variables. 
+You can include such a file in Docker Compse with the parameter `--env-file .env`. 
 
 ## Udagram-api-frontend [![Docker Image CI + Push](https://github.com/samuelspagl/udagram-frontend/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/samuelspagl/udagram-frontend/actions/workflows/main.yml)
 
@@ -42,4 +43,10 @@ Additionally TravisCI is requiring a CreditCard as they have a "Freemium" Model.
 ![GitCi ReverseProxy](./screenshots/GitCI_reverseproxy.png)
 
 ### Setting up a kubernetes cluster on AWS
+![Kubernetes pods](./screenshots/kubectl_get_pods_2.png)
+![Kubernetes services](./screenshots/kubectl_get_services.png)
 
+### Finished work:
+![Udagram](./Udagram_deployment_frontend.png)
+
+More screenshots can be found in the screenshots folder.
